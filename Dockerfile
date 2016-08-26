@@ -1,4 +1,5 @@
-FROM java:7
-COPY JavaHelloWorld.java .
-RUN javac JavaHelloWorld.java
+FROM ubuntu:14.04
+RUN apt-get update && apt-get install -y curl \
+	 				 vim
 
+CMD ["ping", "127.0.0.1", "-c", "30"]
